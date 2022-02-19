@@ -107,22 +107,22 @@ class ProdutoController extends Controller
     }
 
         Produto::findOrFail($request->id)->update($data);
-    return redirect('/')->with('mensagem', 'Produto editado com Sucesso!', ['data' => $data]);
+    return redirect('/produtos/painel')->with('mensagem', 'Produto editado com Sucesso!', ['data' => $data]);
     }
 
     
-    public function dashboard() {
+    public function painel() {
         $user = auth()->user();
         $produtos = $user->produtos;
 
-        return View('produtos.dashboard', ['produtos' => $produtos]);
+        return View('produtos.painel', ['produtos' => $produtos]);
     }
 
     public function destroy($id) {
 
         Produto::findOrFail($id)->delete();
 
-    return redirect('/')->with('mensagem', 'Produto deletado com Sucesso!'); //Invocar mensagemmmmmmmmmmmmmm
+    return redirect('/produtos/painel')->with('mensagem', 'Produto deletado com Sucesso!'); //Invocar mensagemmmmmmmmmmmmmm
     }
 
  

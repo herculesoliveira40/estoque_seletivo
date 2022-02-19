@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProdutoController;
 
 Route::get('/', [ProdutoController::class, 'index']);
+Route::get('/produtos/painel', [ProdutoController::class, 'painel'])->middleware('auth');
 Route::get('/produtos/create', [ProdutoController::class, 'create'])->middleware('auth');
 Route::post('/produtos', [ProdutoController::class, 'store']);
 Route::get('/produtos/{id}', [ProdutoController::class, 'show']);
@@ -53,4 +54,3 @@ Route::get('/contato', function () {
 });
 
 
-Route::get('/produtos/dashboard', [ProdutoController::class, 'dashboard'])->middleware('auth');
