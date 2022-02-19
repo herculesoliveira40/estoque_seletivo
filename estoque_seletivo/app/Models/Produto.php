@@ -16,4 +16,8 @@ class Produto extends Model
     public function user() {
         return $this->belongsTo('App\Models\User');
     }
+    
+    public function estoque() {
+        return $this->hasMany('App\Models\Estoque');
+    }
 }

@@ -16,6 +16,10 @@ return new class extends Migration
         Schema::create('estoques', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            
+            $table->integer('quantidade');
+            $table->foreignId('user_id')->constrained();
+            $table->foreignId('produto_id')->constrained();
         });
     }
 

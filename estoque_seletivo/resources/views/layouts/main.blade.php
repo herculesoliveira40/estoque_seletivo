@@ -28,7 +28,7 @@
         
         <a class="nav-link" aria-current="page" href="/contato">Contato</a>
         <a class="nav-link" aria-current="page" href="/sobre">Sobre</a>
-        <a class="nav-link" aria-current="page" href="/estoque">Estoque</a>
+        <a class="nav-link" aria-current="page" href="/estoques">Estoque</a>
         @auth
               <li class="nav-item">
                 <a class="nav-link" aria-current="page" href="/produtos/create">Criar Produtos</a>
