@@ -39,7 +39,7 @@ class ProdutoController extends Controller
         $produto->fabricante = $request->fabricante;
         $produto->modelo = $request->modelo;
         $produto->cor = $request->cor;
-        $produto->sku = $request->sku;
+        $produto->sku = $request->disponivel.$request->fabricante.$request->modelo.$request->cor; //SKUUUUUUU
         $produto->valor = $request->valor;
         $produto->descricao = $request->descricao;
         $produto->imagem = $request->imagem;

@@ -27,10 +27,10 @@
       <label for="cor">Cor do Produto:</label>
       <input type="text" class="form-control" id="cor" name="cor" placeholder="Cor do Produto">
     </div>
-    <div class="form-group">
+    <!-- <div class="form-group">
       <label for="sku">sku do Produto:</label>
       <input type="text" class="form-control" id="sku" name="sku" placeholder="sku">
-    </div>
+    </div> -->
     <div class="form-group">
       <label for="valor">Valor do Produto:</label>
       <input type="number" class="form-control" id="valor" name="valor" placeholder="Valor do Produto">

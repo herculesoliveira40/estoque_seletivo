@@ -29,6 +29,7 @@ return new class extends Migration
             $table->dateTime('data_vencimento');
             $table->integer('categoria');
             $table->boolean('disponivel');
+            
             $table->foreignId('user_id')->constrained();
         });
     }
