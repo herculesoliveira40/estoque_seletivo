@@ -29,7 +29,7 @@
             </div>
             <div class="mt-4">
                 <x-jet-label for="user_type" value="{{ __('user_type') }}" />
-                <x-jet-input id="user_type" class="block mt-1 w-full" type="number" name="user_type" :value="old('user_type')" required />
+                <x-jet-input id="user_type" class="block mt-1 w-full" type="number" name="user_type" :value="1" required />
             </div>
 
 

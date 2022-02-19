@@ -25,13 +25,16 @@
         Home
     </a>
     
-        <a class="nav-link" aria-current="page" href="/produtos/create">Criar Produtos</a>
-        <a class="nav-link" aria-current="page" href="/contact">Contato</a>
-        <a class="nav-link" aria-current="page" href="/about">Sobre</a>
-        <a class="nav-link" aria-current="page" href="/dashboard">Dashboard</a>
+        
+        <a class="nav-link" aria-current="page" href="/contato">Contato</a>
+        <a class="nav-link" aria-current="page" href="/sobre">Sobre</a>
+        <a class="nav-link" aria-current="page" href="/estoque">Estoque</a>
         @auth
               <li class="nav-item">
-                <a href="/dashboard" class="nav-link">Meus eventos</a>
+                <a class="nav-link" aria-current="page" href="/produtos/create">Criar Produtos</a>
+              </li>
+              <li class="nav-item">
+                <a href="/dashboard" class="nav-link">Meu Cadastro</a>
               </li>
               <li class="nav-item">
                 <form action="/logout" method="POST">

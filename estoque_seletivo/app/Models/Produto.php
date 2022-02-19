@@ -9,7 +9,7 @@ class Produto extends Model
 {
     use HasFactory;
 
-    protected $dates = ['date'];
+    protected $dates = ['data_fabricacao', 'data_vencimento'];
 
     protected $guarded = [];
 

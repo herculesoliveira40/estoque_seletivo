@@ -26,6 +26,7 @@ class ProdutoController extends Controller
 
     }
 
+
     public function create() {
      
         return View('produtos.create');
@@ -67,6 +68,64 @@ class ProdutoController extends Controller
         $produto->save();
 
 
-        return redirect('/')->with('mensagem', 'Produto criado com Sucesso!'); //Invocar mensagemmmmmmmmmmmmmm
+    return redirect('/')->with('mensagem', 'Produto criado com Sucesso!'); //Invocar mensagemmmmmmmmmmmmmm
     }
+
+
+    public function show($id) {
+
+        $produto = Produto::findOrFail($id);
+       
+    return view('produtos.show', ['produto' => $produto]);    
+    }
+
+    
+    public function edit($id) {
+
+        $produto = Produto::findOrFail($id);
+
+    return view('produtos.edit', ['produto' => $produto]); 
+    }
+
+    public function update(Request $request) {
+
+        $data = $request->all(); 
+
+        // Image Upload
+    if($request->hasFile('imagem') && $request->file('imagem')->isValid()) {
+
+        $requestImage = $request->image;
+
+        $extension = $requestImage->extension();
+
+        $imageName = md5($requestImage->getClientOriginalName() . strtotime("now")) . "." . $extension;
+
+        $requestImage->move(public_path('img/produtos'), $imageName);
+
+        $data['imagem'] = $imageName;
+
+    }
+
+        Produto::findOrFail($request->id)->update($data);
+    return redirect('/')->with('mensagem', 'Produto editado com Sucesso!', ['data' => $data]);
+    }
+
+    
+    public function dashboard() {
+        $user = auth()->user();
+        $produtos = $user->produtos;
+
+        return View('produtos.dashboard', ['produtos' => $produtos]);
+    }
+
+    public function destroy($id) {
+
+        Produto::findOrFail($id)->delete();
+
+    return redirect('/')->with('mensagem', 'Produto deletado com Sucesso!'); //Invocar mensagemmmmmmmmmmmmmm
+    }
+
+ 
+
+
 }
