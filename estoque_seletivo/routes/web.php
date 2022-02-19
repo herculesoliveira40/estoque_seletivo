@@ -21,6 +21,16 @@ Route::post('/produtos', [ProdutoController::class, 'store']);
 
 
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('home');
+// Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+//     return view('home');
+// })->name('dashboard');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/', [ProdutoController::class, 'index']);
+Route::get('/about', function () {
+    return view('about');
+});
+
+
+Route::middleware(['auth:sanctum'])->get('/dashboard', function () {
+    return view('dashboard');
 })->name('dashboard');

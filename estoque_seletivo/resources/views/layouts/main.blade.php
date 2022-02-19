@@ -67,7 +67,7 @@
     </div>
 </main>
 <footer class="text-center bg-danger text-light">
-    <p> "como sabemos se queremos alguma coisa ou se foi nossa criação programou para querer" </p>
+    <p> "Como sabemos se queremos alguma coisa ou se foi nossa criação programou para querer" </p>
         <p>  2022 <a href="https://github.com/herculesoliveira40" target="_blank"> Shelby  &copy;</a> </strong> </p>
 </footer>
 </body>
