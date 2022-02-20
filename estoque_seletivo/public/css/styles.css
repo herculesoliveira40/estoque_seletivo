@@ -1,0 +1,17 @@
+.div_meio{
+
+    display: flex;
+    padding: 50px;
+    margin: 70px;
+}
+
+.div_es{
+
+    flex: 3;
+}
+
+
+.div_di{
+
+    flex: 2;
+}

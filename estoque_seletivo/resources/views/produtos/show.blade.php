@@ -2,19 +2,39 @@
 @section('title', $produto->nome)
 
 @section('content')
-<div class="col-md-10 offset-md-1">
-    <div class="card mb-3">
-    <img class="img-preview w-50" src="/img/produtos/{{ $produto->imagem }}">
-    <div class="card-body">
-        <h5 class="card-title">{{$produto->nome}}</h5>
-        <p class="card-text"><small class="text-muted">{{$produto->modelo}}</small></p>
-        <p class="card-text">{{$produto->descricao}}</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a> <hr>
-        <p>Criado por {{$produto->fabricante}}</p>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+      <img class="img-preview w-50" src="/img/produtos/{{ $produto->imagem }}">
+      </div>
+    </div>
+  </div>
 
+
+
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h3 class="card-title">Produto: {{$produto->nome}}</h3>
+        <h5 class="card-title">Fabricado por: {{$produto->fabricante}}</h5>
+        <p class="card-text">Modelo: {{$produto->modelo}}</p>
+        <p class="card-text">Cor: {{$produto->modelo}}</p>
+        <p class="card-text">Sku: {{$produto->modelo}}</p>
+        <p class="card-text"><small class="text-muted">Fabricado em: {{$produto->data_fabricacao->format('m / Y')}}</small></p>
+            @auth
+                <a href="/produtos/edit/{{ $produto->id }}" class="btn btn-info edit-btn"><ion-icon name="create-outline"></ion-icon> Editar</a>
+            @endauth
+      </div>
     </div>
+  </div>
+    <div class="card w-100">
+      <div class="card-body">
+        <h3 class="card-text"> Descrição: </h3>
+        <p class="card-text"> {{$produto->descricao}}</p>
+      
+      </div>
     </div>
-    
 </div>
 
 

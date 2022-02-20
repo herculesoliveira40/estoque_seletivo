@@ -8,7 +8,7 @@
     <link rel="icon" href="/img/deadpool-logo.png" sizes="42x42" type="image/png">
     <title>@yield('title')</title>
                     <!-- CSS Interno -->
-    <!-- <link rel="stylesheet" href="/css/styles.css"> -->
+    <link rel="stylesheet" href="/css/styles.css"> 
                     <!-- Boostrap CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
                     <!-- Icones IONIC -->
