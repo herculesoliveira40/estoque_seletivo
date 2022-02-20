@@ -10,20 +10,18 @@
     <table class="table">
         <thead>
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">ID</th>
-                <th scope="col"> Quantidade</th>
+                <th scope="col">#</th>             
                 <th scope="col">Produto</th>
+                <th scope="col"> Quantidade</th>
                 <th scope="col">Ações</th>
             </tr>
         </thead>
         <tbody>
             @foreach($estoques as $estoque)
                 <tr>
-                    <td scropt="row">{{ $loop->index + 1 }}</td>
-                    <td >{{ $estoque->id }}</td>
-                    <td>{{ $estoque->produto_id }}</td>
-                    <td>{{ $estoque->quantidade }}</td>   
+                    <td scropt="row">{{ $loop->index + 1 }}</td>         
+                    <td><a href="/produtos/{{ $estoque->produto_id }}">{{ $estoque->produto_id }}</a></td> 
+                    <td>{{ $estoque->quantidade }}</td>           
                     <td class="d-flex">
                         <a href="/estoques/edit/{{ $estoque->id }}" class="btn btn-info edit-btn"><ion-icon name="create-outline"></ion-icon> Editar</a> 
                         <form action="/estoques/{{ $estoque->id }}" method="POST">

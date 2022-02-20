@@ -31,13 +31,16 @@
         
         <a class="nav-link" aria-current="page" href="/contato">Contato</a>
         <a class="nav-link" aria-current="page" href="/sobre">Sobre</a>
-        <a class="nav-link" aria-current="page" href="/estoques">Estoque</a>
+        <a class="nav-link" aria-current="page" href="/produtos">Produtos</a>
         @auth
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="/produtos/painel">Painel Produtos</a>
+                <a class="nav-link btn btn-outline-danger" aria-current="page" href="/produtos/painel">Painel Produtos</a>
               </li>
               <li class="nav-item">
-                <a href="/dashboard" class="nav-link">Meu Cadastro</a>
+                <a class="nav-link btn btn-outline-danger" aria-current="page" href="/estoques/painel">Painel Estoques</a>
+              </li>
+              <li class="nav-item">
+                <a href="/dashboard" class="nav-link btn btn-outline-danger">Meu Cadastro</a>
               </li>
               <li class="nav-item">
                 <form action="/logout" method="POST">

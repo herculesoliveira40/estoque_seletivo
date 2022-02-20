@@ -112,8 +112,7 @@ class ProdutoController extends Controller
 
     
     public function painel() {
-        $user = auth()->user();
-        $produtos = $user->produtos;
+        $produtos = Produto::all();
 
         return View('produtos.painel', ['produtos' => $produtos]);
     }

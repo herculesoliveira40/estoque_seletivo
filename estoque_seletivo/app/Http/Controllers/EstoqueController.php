@@ -36,7 +36,7 @@ class EstoqueController extends Controller
         $estoque->save();
 
 
-    return redirect('/')->with('mensagem', 'Estoque criado com Sucesso!'); //Invocar mensagemmmmmmmmmmmmmm
+    return redirect('/estoques/painel')->with('mensagem', 'Estoque criado com Sucesso!'); //Invocar mensagemmmmmmmmmmmmmm
     }
 
 
@@ -58,8 +58,9 @@ class EstoqueController extends Controller
 
     
     public function painel() {
-        $user = auth()->user();
-        $estoques = $user->estoques;
+        // $user = auth()->user();
+        // $estoques = $user->estoques; // Estoque do user->id
+        $estoques = Estoque::all();
 
         return View('estoques.painel', ['estoques' => $estoques]);
     }
