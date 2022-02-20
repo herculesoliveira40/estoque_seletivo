@@ -4,8 +4,9 @@
 
 
 <h1>Painel de Produtos: </h1>
-
 <div class="col-md-10 offset-md-1 dashboard-events-container">
+<a href="/produtos/create" class="btn btn-success">Criar Produtos</a>
+
     @if(count($produtos) > 0)
     <table class="table">
         <thead>

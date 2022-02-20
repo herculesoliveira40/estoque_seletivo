@@ -18,8 +18,10 @@ return new class extends Migration
             $table->timestamps();
             
             $table->integer('quantidade');
+            // $table->integer('produto_id');
+            $table->foreignId('produto_id')->references('id')->on('produtos');
             $table->foreignId('user_id')->constrained();
-            $table->foreignId('produto_id')->constrained();
+            
         });
     }
 

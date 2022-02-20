@@ -31,7 +31,7 @@
         <a class="nav-link" aria-current="page" href="/estoques">Estoque</a>
         @auth
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="/produtos/create">Criar Produtos</a>
+                <a class="nav-link" aria-current="page" href="/produtos/painel">Painel Produtos</a>
               </li>
               <li class="nav-item">
                 <a href="/dashboard" class="nav-link">Meu Cadastro</a>

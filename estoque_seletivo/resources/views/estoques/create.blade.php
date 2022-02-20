@@ -15,8 +15,17 @@
     </div>
 
     <div class="form-group">
-      <label for="produto_id">Produto</label>
-      <input type="number" class="form-control" id="produto_id" name="produto_id">
+    <label for="produto_id" class="form-label"> Produto: </label>
+    <select  name="produto_id" id="produto_id"  class="form-control" placeholder="produto_id">  
+        
+        
+        
+
+            @foreach($produtos->id as $p) 
+               <p>{{$p}}</p> 
+
+            @endforeach
+    </select>
     </div>
 
     <input type="submit" class="btn btn-primary" value="Criar Estoque">
@@ -30,10 +39,3 @@
 @endsection
 
 
-<label for="produto_id" class="form-label"> Produto: </label>
-    <select  name="produto_id" id="produto_id"  class="form-control" placeholder="produto_id">  
-        @php foreach ($produtos['produto_ids'] as $produto_id): ?>
-          
-                <option value="{{$produto_id->id}}"> {{ $produto_id->nome}} </option>
-        @ endphp
-    </select >

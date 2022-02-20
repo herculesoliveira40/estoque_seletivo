@@ -27,6 +27,7 @@ class EstoqueController extends Controller
         $estoque= new Estoque();
         $estoque->quantidade = $request->quantidade;
         $estoque->produto_id = $request->produto->id;
+        // $estoque->produto_id =  $produtos = Produto::all();
 
         $user = auth()->user();
         $estoque->user_id = $user->id;
