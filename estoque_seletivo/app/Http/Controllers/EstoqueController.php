@@ -60,9 +60,10 @@ class EstoqueController extends Controller
     public function painel() {
         // $user = auth()->user();
         // $estoques = $user->estoques; // Estoque do user->id
+        $produtos = Produto::all();
         $estoques = Estoque::all();
 
-        return View('estoques.painel', ['estoques' => $estoques]);
+        return View('estoques.painel', ['estoques' => $estoques], compact('produtos')); 
     }
 
     public function destroy($id) {

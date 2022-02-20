@@ -19,7 +19,7 @@
       <label for="produto_id" class="form-label"> Produto: </label>
       <select  name="produto_id" id="produto_id"  class="form-control" placeholder="produto_id">  
         @foreach ($produtos as $produto)
-        <option value="{{$produto->id}}">{{$produto->nome}}</option>
+        <option value="{{$produto->id}}" {{ $estoque->produto_id == ($loop->index +1) ? "selected='selected'" : ""}}>{{$produto->nome}}</option>
         @endforeach
       </select>  
     </div>
