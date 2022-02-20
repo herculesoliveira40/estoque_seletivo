@@ -33,7 +33,15 @@ Route::delete('/produtos/{id}', [ProdutoController::class, 'destroy'])->middlewa
 
                     // Rotas Estoques
 Route::get('/estoques', [EstoqueController::class, 'index']);
-Route::get('/estoques/create', [EstoqueController::class, 'create']);
+Route::get('/estoques/create', [EstoqueController::class, 'create'])->middleware('auth');
+Route::post('/estoques', [EstoqueController::class, 'store']);
+Route::get('/estoques/painel', [EstoqueController::class, 'painel'])->middleware('auth');
+
+
+Route::get('/estoques/edit/{id}', [EstoqueController::class, 'edit'])->middleware('auth');
+Route::put('/estoques/update/{id}', [EstoqueController::class, 'update'])->middleware('auth');
+
+ Route::delete('/estoques/{id}', [EstoqueController::class, 'destroy'])->middleware('auth');
 
 
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

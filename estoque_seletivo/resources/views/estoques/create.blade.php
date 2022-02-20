@@ -15,25 +15,15 @@
     </div>
 
     <div class="form-group">
-    <label for="produto_id" class="form-label"> Produto: </label>
-    <select  name="produto_id" id="produto_id"  class="form-control" placeholder="produto_id">  
-        
-        
-        
-
-            @foreach($produtos->id as $p) 
-               <p>{{$p}}</p> 
-
-            @endforeach
-    </select>
+      <label for="produto_id" class="form-label"> Produto: </label>
+      <input type="number" class="form-control" id="produto_id" name="produto_id">
+    
     </div>
 
     <input type="submit" class="btn btn-primary" value="Criar Estoque">
   </form>
   
 </div>
-
-
 
 
 @endsection
