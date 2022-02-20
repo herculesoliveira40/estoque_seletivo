@@ -6,7 +6,7 @@
   <div class="col-sm-6">
     <div class="card">
       <div class="card-body">
-      <img class="img-preview w-50" src="/img/produtos/{{ $produto->imagem }}">
+      <img class="img-preview w-75" src="/img/produtos/{{ $produto->imagem }}">
       </div>
     </div>
   </div>
