@@ -33,7 +33,7 @@
     </div> -->
     <div class="form-group">
       <label for="valor">Valor do Produto:</label>
-      <input type="number" class="form-control" id="valor" name="valor" placeholder="Valor do Produto">
+      <input type="number" class="form-control" id="valor" name="valor" placeholder="Valor do Produto" step=".01">
     </div>
     <div class="form-group">
       <label for="descricao">Descrição:</label>

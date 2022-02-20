@@ -16,12 +16,13 @@
   <div class="col-sm-6">
     <div class="card">
       <div class="card-body">
-        <h3 class="card-title">Produto: {{$produto->nome}}</h3>
+        <h3 class="card-title">Produto: {{$produto->nome}}</h3> <hr> 
         <h5 class="card-title">Fabricado por: {{$produto->fabricante}}</h5>
         <p class="card-text">Modelo: {{$produto->modelo}}</p>
         <p class="card-text">Cor: {{$produto->modelo}}</p>
         <p class="card-text">Sku: {{$produto->modelo}}</p>
         <p class="card-text"><small class="text-muted">Fabricado em: {{$produto->data_fabricacao->format('m / Y')}}</small></p>
+        <h4 class="card-text">Valor: {{$produto->valor}} R$</h4> <hr>   
             @auth
                 <a href="/produtos/edit/{{ $produto->id }}" class="btn btn-info edit-btn"><ion-icon name="create-outline"></ion-icon> Editar</a>
             @endauth

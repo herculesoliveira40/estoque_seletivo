@@ -35,7 +35,7 @@
     </div>
     <div class="form-group">
       <label for="valor">Valor do Produto:</label>
-      <input type="number" class="form-control" id="valor" name="valor" value="{{ $produto->valor}}">
+      <input type="number" class="form-control" id="valor" name="valor" value="{{ $produto->valor}}" step=".01">
     </div>
     <div class="form-group">
       <label for="descricao">Descrição:</label>
