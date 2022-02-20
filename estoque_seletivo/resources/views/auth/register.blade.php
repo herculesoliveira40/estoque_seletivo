@@ -1,3 +1,4 @@
+
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
@@ -21,11 +22,11 @@
 
             <div class="mt-4">
                 <x-jet-label for="cpf" value="{{ __('cpf') }}" />
-                <x-jet-input id="cpf" class="block mt-1 w-full" type="text" name="cpf" :value="old('cpf')" required />
+                <x-jet-input id="cpf" class="block mt-1 w-full" type="text" name="cpf" :value="old('cpf')" onkeypress="$(this).mask('000.000.000-00')" required />
             </div>
             <div class="mt-4">
                 <x-jet-label for="phone" value="{{ __('phone') }}" />
-                <x-jet-input id="phone" class="block mt-1 w-full" type="tel" name="phone" :value="old('phone')" required />
+                <x-jet-input id="phone" class="block mt-1 w-full" type="tel" name="phone" :value="old('phone')" onkeypress="$(this).mask('(00) 00000-0000')" required />
             </div>
             <div class="mt-4">
                 <x-jet-label for="user_type" value="{{ __('user_type') }}" />
