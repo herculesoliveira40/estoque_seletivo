@@ -20,7 +20,7 @@ class EstoqueController extends Controller
     public function create() {
         $produtos = Produto::all();
         
-        return View('estoques.create', compact($produtos));
+        return View('estoques.create', compact('produtos'));
     }
 
     public function store(Request $request) {
@@ -41,10 +41,10 @@ class EstoqueController extends Controller
 
 
     public function edit($id) {
-
+        $produtos = Produto::all();
         $estoque = Estoque::findOrFail($id);
 
-    return view('estoques.edit', ['estoque' => $estoque]); 
+    return view('estoques.edit', ['estoque' => $estoque], compact('produtos')); 
     }
 
 
