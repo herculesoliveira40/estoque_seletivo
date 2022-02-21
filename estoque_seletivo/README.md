@@ -15,8 +15,9 @@ DB_PASSWORD=
 
 ## *IDE terminal Comando:  
 
-php artisan migrate
+composer install
 
+php artisan migrate
 
 php artisan serve
 
