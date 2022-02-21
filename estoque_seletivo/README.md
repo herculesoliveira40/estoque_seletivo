@@ -1,11 +1,11 @@
 
 
-## MYSQL Comando query:
+## *MYSQL Comando query:
 
 CREATE database if not exists estoque char set utf8;
 
 
-## IDE Configuração Arquivo .ENV:
+## *IDE Configuração Arquivo .ENV:
 
 Editar as variaveis do arquivo /.env de acordo com a sua configuração do seu banco de dados
 
@@ -13,13 +13,19 @@ DB_USERNAME=root
 DB_PASSWORD=
 
 
-## IDE terminal Comando:  
+## *IDE terminal Comando:  
 
 php artisan migrate
+
 
 php artisan serve
 
 
+## IDE Node install i terminal Comando:  
 
+
+npm install
+
+npm run dev
 
 
