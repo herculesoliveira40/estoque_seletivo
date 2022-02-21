@@ -24,7 +24,7 @@
         <p class="card-text"><small class="text-muted">Fabricado em: {{$produto->data_fabricacao->format('m / Y')}}</small></p>
         <h4 class="card-text">Valor: {{$produto->valor}} R$</h4> <hr>   
             @auth
-                <a href="/produtos/edit/{{ $produto->id }}" class="btn btn-info edit-btn"><ion-icon name="create-outline"></ion-icon> Editar</a>
+                <a href="/produtos/edit/{{ $produto->id }}" class="btn btn-info edit-btn"><i class="bi bi-wrench-adjustable-circle"></i> Editar</a>
             @endauth
       </div>
     </div>

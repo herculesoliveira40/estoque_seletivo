@@ -5,7 +5,7 @@
 
 <h1>Painel de Produtos: </h1>
 <div class="col-md-10 offset-md-1 dashboard-events-container">
-<a href="/produtos/create" class="btn btn-success">Criar Produtos</a>
+<a href="/produtos/create" class="btn btn-success"><i class="bi bi-plus-square-dotted"></i> Criar Produtos</a>
 
     @if(count($produtos) > 0)
     <table class="table">
@@ -24,11 +24,11 @@
                     <td><a href="/produtos/{{ $produto->id }}">{{ $produto->nome }}</a></td>
                     <td>{{ $produto->sku }}</td>
                     <td class="d-flex">
-                        <a href="/produtos/edit/{{ $produto->id }}" class="btn btn-info edit-btn"><ion-icon name="create-outline"></ion-icon> Editar</a> 
+                        <a href="/produtos/edit/{{ $produto->id }}" class="btn btn-info edit-btn"><i class="bi bi-wrench-adjustable"></i> Editar</a> 
                         <form action="/produtos/{{ $produto->id }}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger delete-btn"><ion-icon name="trash-outline"></ion-icon> Deletar</button>
+                            <button type="submit" class="btn btn-danger delete-btn" style="margin-left: 10px;"><i class="bi bi-trash3-fill"></i> Deletar</button>
                         </form>
                     </td>
                 </tr>
