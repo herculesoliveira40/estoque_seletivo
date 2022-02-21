@@ -27,9 +27,9 @@ return new class extends Migration
             $table->string('imagem');
             $table->dateTime('data_fabricacao');
             $table->dateTime('data_vencimento');
-            $table->integer('categoria');
-            $table->boolean('disponivel');
             
+            $table->boolean('disponivel');
+            $table->foreignId('categoria_id')->references('id')->on('categorias');
             $table->foreignId('user_id')->constrained();
         });
     }

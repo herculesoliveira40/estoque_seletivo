@@ -50,8 +50,12 @@
       <input type="date" class="form-control" id="data_vencimento" name="data_vencimento" value="{{$produto->data_vencimento->format('Y-m-d')}}">
     </div>
     <div class="form-group">
-      <label for="categoria">Categoria do Produto:</label>
-      <input type="number" class="form-control" id="categoria" name="categoria" value="{{ $produto->categoria}}">
+      <label for="categoria_id" class="form-label"> Categoria do Produto: </label>
+      <select  name="categoria_id" id="categoria_id"  class="form-control">  
+          @foreach ($categorias as $categoria)
+          <option value="{{$categoria->id}}" {{ $produto->categoria_id == ($loop->index +1) ? "selected='selected'" : ""}}>{{$categoria->nome}}</option>
+          @endforeach
+      </select>  
     </div>
     <div class="form-group">
       <label for="disponivel">Disponivel?</label>

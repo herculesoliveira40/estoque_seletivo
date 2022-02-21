@@ -33,6 +33,9 @@
         <a class="nav-link" aria-current="page" href="/produtos">Produtos</a>
         @auth
               <li class="nav-item">
+                <a class="nav-link btn btn-outline-danger" aria-current="page" href="/categorias/painel">Painel Categorias</a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link btn btn-outline-danger" aria-current="page" href="/produtos/painel">Painel Produtos</a>
               </li>
               <li class="nav-item">
@@ -58,7 +61,7 @@
                 <a href="/login" class="nav-link btn-warning">Entrar</a>
               </li>
               <li class="nav-item">
-                <a href="/register" class="nav-link">Cadastrar</a>
+                <a href="/register" class="nav-link btn-warning">Cadastrar</a>
               </li>
         @endguest  
 

@@ -48,8 +48,12 @@
       <input type="date" class="form-control" id="data_vencimento" name="data_vencimento" >
     </div>
     <div class="form-group">
-      <label for="categoria">Categoria do Produto:</label>
-      <input type="number" class="form-control" id="categoria" name="categoria" placeholder="Categoria do Produto">
+      <label for="categoria_id" class="form-label"> Categoria do Produto: </label>
+      <select  name="categoria_id" id="categoria_id"  class="form-control">  
+          @foreach ($categorias as $categoria)
+          <option value="{{$categoria->id}}">{{$categoria->nome}}</option>
+          @endforeach
+      </select>  
     </div>
     <div class="form-group">
       <label for="disponivel">Disponivel?</label>

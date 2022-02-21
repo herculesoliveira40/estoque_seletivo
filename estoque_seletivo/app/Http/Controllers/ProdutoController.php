@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Produto;
+use App\Models\Categoria;
 use App\Models\User;
 
 class ProdutoController extends Controller
@@ -28,8 +29,10 @@ class ProdutoController extends Controller
 
 
     public function create() {
+
+        $categorias = Categoria::all();
      
-        return View('produtos.create');
+        return View('produtos.create', compact('categorias'));
     }
 
     public function store(Request $request) {
@@ -45,7 +48,7 @@ class ProdutoController extends Controller
         $produto->imagem = $request->imagem;
         $produto->data_fabricacao = $request->data_fabricacao;
         $produto->data_vencimento = $request->data_vencimento;
-        $produto->categoria = $request->categoria;
+        $produto->categoria_id = $request->categoria_id;
         $produto->disponivel = $request->disponivel;
 
         // Image Upload
@@ -81,10 +84,10 @@ class ProdutoController extends Controller
 
     
     public function edit($id) {
-
+        $categorias = Categoria::all();
         $produto = Produto::findOrFail($id);
 
-    return view('produtos.edit', ['produto' => $produto]); 
+    return view('produtos.edit', ['produto' => $produto], compact('categorias')); 
     }
 
     public function update(Request $request) {
@@ -92,19 +95,19 @@ class ProdutoController extends Controller
         $data = $request->all(); 
 
         // Image Upload
-    if($request->hasFile('imagem') && $request->file('imagem')->isValid()) {
+        if($request->hasFile('imagem') && $request->file('imagem')->isValid()) {
 
-        $requestImage = $request->image;
+            $requestImage = $request->image;
 
-        $extension = $requestImage->extension();
+            $extension = $requestImage->extension();
 
-        $imageName = md5($requestImage->getClientOriginalName() . strtotime("now")) . "." . $extension;
+            $imageName = md5($requestImage->getClientOriginalName() . strtotime("now")) . "." . $extension;
 
-        $requestImage->move(public_path('img/produtos'), $imageName);
+            $requestImage->move(public_path('img/produtos'), $imageName);
 
-        $data['imagem'] = $imageName;
+            $data['imagem'] = $imageName;
 
-    }
+        }
 
         Produto::findOrFail($request->id)->update($data);
     return redirect('/produtos/painel')->with('mensagem', 'Produto editado com Sucesso!', ['data' => $data]);
