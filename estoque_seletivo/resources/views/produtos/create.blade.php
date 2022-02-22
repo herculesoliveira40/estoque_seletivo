@@ -56,6 +56,10 @@
       </select>  
     </div>
     <div class="form-group">
+      <label for="quantidade">Quantidade em estoque:</label>
+      <input type="number" class="form-control" id="quantidade" name="quantidade" placeholder="Quantidade">
+    </div>
+    <div class="form-group">
       <label for="disponivel">Disponivel?</label>
       <select name="disponivel" id="disponivel" class="form-control">
         <option value="0">Não</option>

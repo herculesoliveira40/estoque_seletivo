@@ -10,7 +10,7 @@
     @csrf               {{--DIRETIVA SALVAR DADOS NO BANCO--}}
 
     <div class="form-group">
-      <label for="quantidade ">Quantidade do Produto:</label>
+      <label for="quantidade">Quantidade do Produto:</label>
       <input type="number" class="form-control" id="quantidade" name="quantidade">
     </div>
 

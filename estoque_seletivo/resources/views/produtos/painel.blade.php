@@ -14,7 +14,8 @@
                 <th scope="col">#</th>
                 <th scope="col">Produto</th>
                 <th scope="col">Sku</th>
-                <th scope="col">Imagem</th>
+                <th scope="col">Quantidade</th>
+                <th scope="col">Imagem</th>          
                 <th scope="col">Ações</th>
 
             </tr>
@@ -25,6 +26,7 @@
                     <td scropt="row">{{ $loop->index + 1 }}</td>
                     <td><a href="/produtos/{{ $produto->id }}">{{ $produto->nome }}</a></td>
                     <td>{{ $produto->sku }}</td>
+                    <td>{{ $produto->quantidade }}</td>
                     <td ><img class="img-preview" height="40px" width="40px" src="/img/produtos/{{ $produto->imagem }}"></td>
                     <td class="d-flex">
                         <a href="/produtos/edit/{{ $produto->id }}" class="btn btn-info edit-btn"><i class="bi bi-wrench-adjustable"></i> Editar</a> 

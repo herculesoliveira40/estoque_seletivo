@@ -30,7 +30,7 @@
       <input type="text" class="form-control" id="cor" name="cor" value="{{ $produto->cor}}">
     </div>
     <div class="form-group">
-      <label for="sku">sku do Produto:</label>
+      <label for="sku">SKU do Produto:</label>
       <input type="text" class="form-control" id="sku" name="sku" value="{{ $produto->sku}}">
     </div>
     <div class="form-group">
@@ -56,6 +56,10 @@
           <option value="{{$categoria->id}}" {{ $produto->categoria_id == ($loop->index +1) ? "selected='selected'" : ""}}>{{$categoria->nome}}</option>
           @endforeach
       </select>  
+    </div>
+    <div class="form-group">
+      <label for="quantidade">Quantidade em estoque:</label>
+      <input type="number" class="form-control" id="quantidade" name="quantidade" value="{{$produto->quantidade}}">
     </div>
     <div class="form-group">
       <label for="disponivel">Disponivel?</label>

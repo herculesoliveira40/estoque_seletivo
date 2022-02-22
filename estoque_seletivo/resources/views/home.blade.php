@@ -23,8 +23,9 @@
         <div class="card col-md-3">
             <img src="/img/produtos/{{$produto->imagem}}" alt="{{ $produto->nome }}">
             <div class="card-body">
-                <p class="card-date">{{ date('d/m/Y', strtotime($produto->data_fabricacao)) }}</p>
                 <h5 class="card-title">{{ $produto->nome }}</h5>
+                <p class="card-date">{{ date('m/Y', strtotime($produto->data_fabricacao)) }}</p>
+                <p class="card-date"> Quantidade Disponivel: {{ $produto->quantidade}} </p>
                 <a href="/produtos/{{$produto->id}}" class="btn btn-primary">Saber mais</a>
             </div>
         </div>

@@ -21,6 +21,7 @@
         <p class="card-text">Modelo: {{$produto->modelo}}</p>
         <p class="card-text">Cor: {{$produto->modelo}}</p>
         <p class="card-text">Sku: {{$produto->modelo}}</p>
+        <p class="card-text">Quantidade Disponivel: {{$produto->quantidade}}</p>
         <p class="card-text"><small class="text-muted">Fabricado em: {{$produto->data_fabricacao->format('m / Y')}}</small></p>
         <h4 class="card-text">Valor: {{$produto->valor}} R$</h4> <hr>   
             @auth

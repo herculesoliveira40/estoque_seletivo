@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Produto;
 use App\Models\Categoria;
 use App\Models\User;
+use App\Models\Estoque;
 
 class ProdutoController extends Controller
 {
@@ -49,6 +50,7 @@ class ProdutoController extends Controller
         $produto->data_fabricacao = $request->data_fabricacao;
         $produto->data_vencimento = $request->data_vencimento;
         $produto->categoria_id = $request->categoria_id;
+        $produto->quantidade = $request->quantidade;
         $produto->disponivel = $request->disponivel;
 
         // Image Upload
@@ -108,6 +110,18 @@ class ProdutoController extends Controller
             $data['imagem'] = $imageName;
 
         }
+
+            $estoque = Estoque::all();      //Criação de estoque
+            $estoque= new Estoque();
+            $estoque->produto_quantidade = $request->quantidade;
+            $estoque->produto_quantidade_anterior = $request->quantidade;
+            $estoque->produto_id =  $request->id;
+            $estoque->status = 0;
+
+            $user = auth()->user();
+            $estoque->user_id = $user->id;
+            
+            $estoque->save();
 
         Produto::findOrFail($request->id)->update($data);
     return redirect('/produtos/painel')->with('mensagem', 'Produto editado com Sucesso!', ['data' => $data]);
