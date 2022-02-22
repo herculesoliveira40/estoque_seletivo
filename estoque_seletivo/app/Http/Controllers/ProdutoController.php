@@ -111,10 +111,12 @@ class ProdutoController extends Controller
 
         }
 
-            $estoque = Estoque::all();      //Criação de estoque
+        $anterior = Produto::where('id',$request->id)->value('quantidade');
+
+            $estoque = Estoque::all();      //Criação de estoquehttps://www.codegrepper.com/code-examples/php/get+single+column+value+in+laravel+eloquent
             $estoque= new Estoque();
             $estoque->produto_quantidade = $request->quantidade;
-            $estoque->produto_quantidade_anterior = $request->quantidade;
+            $estoque->produto_quantidade_anterior = $anterior;
             $estoque->produto_id =  $request->id;
             $estoque->status = 0;
 
