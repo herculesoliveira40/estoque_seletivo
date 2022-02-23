@@ -19,7 +19,7 @@ class EstoqueController extends Controller
 
     }
 
-    public function historico() {
+    public function viewRelatorio() {
     
 
         $historicos = DB::statement(" CREATE VIEW estoque_movimentacoes 
@@ -34,7 +34,7 @@ class EstoqueController extends Controller
                         
             ");
 
-        return view('estoques.historico', ['historicos' => $historicos]);
+        return view('estoques.view', ['historicos' => $historicos]);
 
     }
 
