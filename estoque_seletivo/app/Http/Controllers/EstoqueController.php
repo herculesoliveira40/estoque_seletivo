@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 
 use App\Models\Estoque;
 use App\Models\Produto;
@@ -14,6 +16,25 @@ class EstoqueController extends Controller
     public function index() {
     
         return view('estoques.home');
+
+    }
+
+    public function historico() {
+    
+
+        $historicos = DB::statement(" CREATE VIEW estoque_movimentacoes 
+            AS
+                SELECT DISTINCT(produtos.nome) as 'Produto', produtos.valor as 'R$', 
+                estoques.produto_quantidade_anterior as 'QTD Inicial',
+                sum(estoques.produto_quantidade - estoques.produto_quantidade_anterior) as 'QTD movimentada dia', 
+                sum(estoques.produto_quantidade - estoques.produto_quantidade_anterior)* produtos.valor as 'Valor total',
+                date_format(estoques.created_at, '%d/%m/%Y')  as 'Data' FROM estoques 
+                inner join produtos on produtos.id = estoques.produto_id group by produtos.nome, date(estoques.created_at)
+                ORDER BY data DESC;
+                        
+            ");
+
+        return view('estoques.historico', ['historicos' => $historicos]);
 
     }
 
