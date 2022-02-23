@@ -15,14 +15,16 @@ return new class extends Migration
     {
         Schema::create('estoques', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            
             $table->integer('produto_quantidade_anterior');
+            $table->integer('quantidade_movimentada');
             $table->integer('status');
 
             $table->foreignId('produto_id')->references('id')->on('produtos');
             $table->integer('produto_quantidade')->references('quantidade')->on('produtos');    
             $table->foreignId('user_id')->constrained();
             
+            $table->timestamps();
         });
     }
 

@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('produtos', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
 
             $table->string('nome');
+            $table->integer('quantidade');
             $table->string('fabricante');
             $table->string('modelo');
             $table->string('cor');
@@ -27,11 +27,13 @@ return new class extends Migration
             $table->string('imagem');
             $table->dateTime('data_fabricacao');
             $table->dateTime('data_vencimento');
-            $table->integer('quantidade');
-
+            
             $table->boolean('disponivel');
             $table->foreignId('categoria_id')->references('id')->on('categorias');
             $table->foreignId('user_id')->constrained();
+            
+            $table->timestamps();
+
         });
     }
 

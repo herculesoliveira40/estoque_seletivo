@@ -14,6 +14,7 @@
                 <th scope="col">Produto</th>
                 <th scope="col"> Quantidade Atual</th>
                 <th scope="col"> Quantidade Anterior</th>
+                <th scope="col"> Quantidade Movimentada</th>
                 <th scope="col">Status</th>
             </tr>
         </thead>
@@ -32,6 +33,7 @@
                         </form>
                     </td> -->
                     <td>{{ $estoque->produto_quantidade_anterior }}</td> 
+                    <td>{{ $estoque->quantidade_movimentada}}</td> 
                     <td>{{ $estoque->status }}</td> 
                 </tr>
             @endforeach    

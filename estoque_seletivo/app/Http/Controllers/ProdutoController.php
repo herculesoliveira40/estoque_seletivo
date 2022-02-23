@@ -117,6 +117,7 @@ class ProdutoController extends Controller
             $estoque= new Estoque();
             $estoque->produto_quantidade = $request->quantidade;
             $estoque->produto_quantidade_anterior = $anterior;
+            $estoque->quantidade_movimentada = ($request->quantidade - $anterior );
             $estoque->produto_id =  $request->id;
             $estoque->status = 0;
 
