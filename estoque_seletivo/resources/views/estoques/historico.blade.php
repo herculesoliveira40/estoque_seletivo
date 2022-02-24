@@ -19,7 +19,7 @@
                 <tr>
                     <td>{{ $estoque->nome}}</td> 
                     <td>{{ $estoque->quantidade_movimentada}}</td> 
-                    <td>{{ $estoque->status }}</td> 
+                    <td>{{ $estoque->status == 0 ? "Novo" : "Baixado" }}</td> 
                     <td> {{($estoque->created_at)}}</td> 
                 </tr>
             @endforeach    

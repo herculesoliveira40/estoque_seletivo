@@ -100,6 +100,7 @@ class EstoqueController extends Controller
         ->join('produtos', 'estoques.produto_id', '=', 'produtos.id')
         ->select('estoques.id', 'estoques.produto_id', 'estoques.produto_quantidade', 'estoques.produto_quantidade_anterior', 
         'produtos.nome', 'estoques.quantidade_movimentada', 'estoques.created_at', 'estoques.status')
+        ->where('status', 0)
         ->get();
 
         return View('estoques.painel', ['estoques' => $estoques], compact('produtos')); 

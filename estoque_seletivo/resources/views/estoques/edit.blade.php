@@ -34,7 +34,7 @@
     <div class="form-group">
       <label for="status">Status: </label>
       <select name="status" id="status" class="form-control">
-        <option value="0">Criado</option>
+        <option value="0">Novo</option>
         <option value="1">Baixado</option>
       </select>
     </div> 
