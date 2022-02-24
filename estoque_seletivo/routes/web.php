@@ -43,9 +43,9 @@ Route::delete('/produtos/{id}', [ProdutoController::class, 'destroy'])->middlewa
 
 
                     // Rotas Estoques
-Route::get('/estoques', [EstoqueController::class, 'index']);
-Route::get('/estoques/historico', [EstoqueController::class, 'historico']);
-Route::get('/estoques/view', [EstoqueController::class, 'viewRelatorio']);
+Route::get('/estoques', [EstoqueController::class, 'index'])->middleware('auth');
+Route::get('/estoques/historico', [EstoqueController::class, 'historico'])->middleware('auth');
+Route::get('/estoques/view', [EstoqueController::class, 'viewRelatorio'])->middleware('auth');
 Route::get('/estoques/create', [EstoqueController::class, 'create'])->middleware('auth');
 Route::post('/estoques', [EstoqueController::class, 'store']);
 Route::get('/estoques/painel', [EstoqueController::class, 'painel'])->middleware('auth');

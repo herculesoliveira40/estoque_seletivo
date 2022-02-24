@@ -15,7 +15,9 @@ class EstoqueController extends Controller
 
     public function index() {
     
-        return view('estoques.home');
+        $estoques = Estoque::all();
+
+        return view('estoques.painel', ['estoques' => $estoques]);
 
     }
 

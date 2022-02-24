@@ -11,7 +11,9 @@ class CategoriaController extends Controller
 {
     public function index() {
     
-        return view('categorias.painel');
+        $categorias = Categoria::all();
+
+        return view('categorias.painel', ['categorias' => $categorias]);
 
     }
 

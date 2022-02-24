@@ -111,7 +111,11 @@
         <div class="row">
             @if(session('mensagem'))
                 <p class="alert alert-success">{{ session('mensagem') }}</p>
+            
+            @elseif(session('alerta'))
+                <p class="alert alert-danger">{{ session('alerta') }}</p>   
             @endif
+            
             @yield('content')
         </div>
     </div>

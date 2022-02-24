@@ -127,7 +127,16 @@ class ProdutoController extends Controller
             $estoque->save();
 
         Produto::findOrFail($request->id)->update($data);
-    return redirect('/produtos/painel')->with('mensagem', 'Produto editado com Sucesso!', ['data' => $data]);
+        
+        if($request->quantidade < 100){
+            return redirect('/produtos/painel')->with('alerta', 'Produto editado, estoque baixo verificar!', ['data' => $data]);
+
+        }
+
+        else{
+            return redirect('/produtos/painel')->with('mensagem', 'Produto editado com Sucesso!', ['data' => $data]);
+
+        }
     }
 
     
