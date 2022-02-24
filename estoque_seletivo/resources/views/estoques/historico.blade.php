@@ -4,7 +4,7 @@
 
 <h1>Relatorio geral movimentações </h1>
 <div class="col-md-10 offset-md-1 dashboard-events-container">
-    <a href="/estoques/historico/pdf" class="btn btn-warning"><i class="bi bi-printer-fill"></i> Imprimir Historico</a>
+    <a href="/estoques/historico/pdf" class="btn btn-warning" style="height: 50px;"><i class="bi bi-printer-fill"></i> Imprimir Historico</a>
 
 
 <table class="table">
