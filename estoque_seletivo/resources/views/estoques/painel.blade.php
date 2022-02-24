@@ -4,7 +4,7 @@
 
 <h1>Painel Movimentações de Estoque: </h1>
 <div class="col-md-10 offset-md-1 dashboard-events-container">
-<!-- <a href="/estoques/create" class="btn btn-success"><i class="bi bi-plus-square-dotted"></i> Criar Estoque</a> -->
+<a href="/estoques/historico" class="btn btn-warning"><i class="bi bi-clipboard2-data-fill"></i> Consultar Historico</a>
 
     @if(count($estoques) > 0)
     <table class="table">
