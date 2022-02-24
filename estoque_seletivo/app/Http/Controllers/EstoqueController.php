@@ -48,7 +48,8 @@ class EstoqueController extends Controller
         ->limit(100)
         
         ->join('produtos', 'estoques.produto_id', '=', 'produtos.id')
-        ->select('estoques.id','produtos.nome', 'estoques.quantidade_movimentada', 'estoques.created_at', 'estoques.status', )
+        ->join('users', 'estoques.user_id', '=', 'users.id')
+        ->select('estoques.id','produtos.nome', 'users.name', 'estoques.quantidade_movimentada', 'estoques.created_at', 'estoques.status' )
         ->get();
         
         // dd($estoques);

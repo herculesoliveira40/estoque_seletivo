@@ -2,7 +2,7 @@
 @section('title', 'Dashboard')
 @section('content')
 
-<h1>View?</h1>
+<h1>Relatorio geral movimentaações </h1>
 
 <table class="table">
         <thead>
@@ -12,6 +12,7 @@
                 <th scope="col"> Quantidade Movimentada</th>
                 <th scope="col">Status</th>
                 <th scope="col">Data</th>
+                <th scope="col">Funcionario</th>
             </tr>
         </thead>
          <tbody>
@@ -21,6 +22,7 @@
                     <td>{{ $estoque->quantidade_movimentada}}</td> 
                     <td>{{ $estoque->status == 0 ? "Novo" : "Baixado" }}</td> 
                     <td> {{($estoque->created_at)}}</td> 
+                    <td> {{($estoque->name)}}</td> 
                 </tr>
             @endforeach    
         </tbody> 
