@@ -16,13 +16,14 @@
                 <th scope="col"> Quantidade Anterior</th>
                 <th scope="col"> Quantidade Movimentada</th>
                 <th scope="col">Status</th>
+                <th scope="col">Data:</th>
             </tr>
         </thead>
         <tbody>
             @foreach($estoques as $estoque)
                 <tr>
                     <td scropt="row">{{ $loop->index + 1 }}</td>         
-                    <td><a href="/produtos/{{ $estoque->produto_id }}">{{ $estoque->produto_id }}</a></td> 
+                    <td><a href="/produtos/{{ $estoque->produto_id }}">{{ $estoque->nome }}</a></td> 
                     <td>{{ $estoque->produto_quantidade }}</td>           
                     <!-- <td class="d-flex">
                         <a href="/estoques/edit/{{ $estoque->id }}" class="btn btn-info edit-btn"><i class="bi bi-wrench-adjustable"></i> Editar</a> 
@@ -35,6 +36,9 @@
                     <td>{{ $estoque->produto_quantidade_anterior }}</td> 
                     <td>{{ $estoque->quantidade_movimentada}}</td> 
                     <td>{{ $estoque->status }}</td> 
+                    <td>{{ $estoque->created_at }}</td> 
+                    <td> <a href="/estoques/edit/{{ $estoque->id }}" class="btn btn-info edit-btn"><i class="bi bi-wrench-adjustable"></i> Editar</a> </td>
+
                 </tr>
             @endforeach    
         </tbody>

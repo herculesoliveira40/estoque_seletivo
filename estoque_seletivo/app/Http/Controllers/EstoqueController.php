@@ -38,10 +38,22 @@ class EstoqueController extends Controller
 
     }
 
-    public function create() {
-        $produtos = Produto::all();
+    public function historico() {
+
+        $estoques = DB::table('estoques')
+
+        ->distinct('estoques.produto_id') 
+        ->orderByRaw('created_at DESC')
         
-        return View('estoques.create', compact('produtos'));
+        ->limit(100)
+        
+        ->join('produtos', 'estoques.produto_id', '=', 'produtos.id')
+        ->select('estoques.id','produtos.nome', 'estoques.quantidade_movimentada', 'estoques.created_at', 'estoques.status', )
+        ->get();
+        
+        // dd($estoques);
+
+        return View('estoques.historico', ['estoques' => $estoques]);
     }
 
     public function store(Request $request) {
@@ -81,10 +93,16 @@ class EstoqueController extends Controller
     public function painel() {
         // $user = auth()->user();
         // $estoques = $user->estoques; // Estoque do user->id
-        $produtos = Produto::all();
-        $estoques = Estoque::all();
+        // $produtos = Produto::all();
+        $estoques = DB::table('estoques')
+        ->orderByRaw('created_at DESC')   
+        ->join('produtos', 'estoques.produto_id', '=', 'produtos.id')
+        
+        ->select('estoques.id', 'estoques.produto_id', 'estoques.produto_quantidade', 'estoques.produto_quantidade_anterior', 
+        'produtos.nome', 'estoques.quantidade_movimentada', 'estoques.created_at', 'estoques.status')
+        ->get();
 
-        return View('estoques.painel', ['estoques' => $estoques], compact('produtos')); 
+        return View('estoques.painel', ['estoques' => $estoques]); 
     }
 
     public function destroy($id) {
