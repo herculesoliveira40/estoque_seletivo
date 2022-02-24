@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\EstoqueController;
+use App\Http\Controllers\HistoricoController;
 
                     // Rotas Categorias
 Route::get('/categorias', [CategoriaController::class, 'index']);
@@ -58,8 +59,8 @@ Route::delete('/estoques/{id}', [EstoqueController::class, 'destroy'])->middlewa
 
 
 
-
-
+                    // Rotas Historico
+Route::get('/estoques/historico/pdf', [HistoricoController::class, 'gerarPdf']);
 
 
 

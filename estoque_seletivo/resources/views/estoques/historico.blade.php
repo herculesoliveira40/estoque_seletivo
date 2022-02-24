@@ -1,8 +1,11 @@
 @extends('layouts.main')
-@section('title', 'Dashboard')
+@section('title', 'Estoque historico')
 @section('content')
 
-<h1>Relatorio geral movimentaações </h1>
+<h1>Relatorio geral movimentações </h1>
+<div class="col-md-10 offset-md-1 dashboard-events-container">
+    <a href="/estoques/historico/pdf" class="btn btn-warning"><i class="bi bi-printer-fill"></i> Imprimir Historico</a>
+
 
 <table class="table">
         <thead>
@@ -21,13 +24,13 @@
                     <td>{{ $estoque->nome}}</td> 
                     <td>{{ $estoque->quantidade_movimentada}}</td> 
                     <td>{{ $estoque->status == 0 ? "Novo" : "Baixado" }}</td> 
-                    <td> {{($estoque->created_at)}}</td> 
+                    <td> {{ date('d/m/Y - H:i:s', strtotime($estoque->created_at)) }}</td>
                     <td> {{($estoque->name)}}</td> 
                 </tr>
             @endforeach    
         </tbody> 
     </table>
-        
+</div>        
    
 
    

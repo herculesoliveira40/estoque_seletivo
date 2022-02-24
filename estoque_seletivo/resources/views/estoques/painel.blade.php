@@ -36,7 +36,7 @@
                     <td>{{ $estoque->produto_quantidade_anterior }}</td> 
                     <td>{{ $estoque->quantidade_movimentada}}</td> 
                     <td><a class="btn btn-success">{{ $estoque->status == 0 ? "Novo" : "Baixado"}}</a></td> 
-                    <td>{{ $estoque->created_at }}</td> 
+                    <td> {{ date('d/m/Y - H:i:s', strtotime($estoque->created_at)) }}</td> 
                     <td> <a href="/estoques/edit/{{ $estoque->id }}" class="btn btn-info edit-btn"><i class="bi bi-wrench-adjustable"></i> Editar</a> </td>
 
                 </tr>

@@ -10,6 +10,8 @@ class Estoque extends Model
     use HasFactory;
 
     protected $guarded = [];
+    
+    protected $dates = ['created_at'];
 
     public function user() {
         return $this->belongsTo('App\Models\User');
