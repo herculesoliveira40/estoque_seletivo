@@ -35,7 +35,7 @@
                     </td> -->
                     <td>{{ $estoque->produto_quantidade_anterior }}</td> 
                     <td>{{ $estoque->quantidade_movimentada}}</td> 
-                    <td>{{ $estoque->status }}</td> 
+                    <td>{{ $estoque->status == 0 ? "Criado" : "Baixado"}}</td> 
                     <td>{{ $estoque->created_at }}</td> 
                     <td> <a href="/estoques/edit/{{ $estoque->id }}" class="btn btn-info edit-btn"><i class="bi bi-wrench-adjustable"></i> Editar</a> </td>
 

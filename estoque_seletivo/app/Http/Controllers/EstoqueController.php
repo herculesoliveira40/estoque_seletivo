@@ -93,16 +93,16 @@ class EstoqueController extends Controller
     public function painel() {
         // $user = auth()->user();
         // $estoques = $user->estoques; // Estoque do user->id
-        // $produtos = Produto::all();
+        $produtos = Produto::all();
         $estoques = DB::table('estoques')
+
         ->orderByRaw('created_at DESC')   
         ->join('produtos', 'estoques.produto_id', '=', 'produtos.id')
-        
         ->select('estoques.id', 'estoques.produto_id', 'estoques.produto_quantidade', 'estoques.produto_quantidade_anterior', 
         'produtos.nome', 'estoques.quantidade_movimentada', 'estoques.created_at', 'estoques.status')
         ->get();
 
-        return View('estoques.painel', ['estoques' => $estoques]); 
+        return View('estoques.painel', ['estoques' => $estoques], compact('produtos')); 
     }
 
     public function destroy($id) {
